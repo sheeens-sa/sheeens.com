@@ -299,6 +299,15 @@ fieldset.field{border:0;margin:0;padding:0}
 .ftr h4{color:#fff;font-size:16px;margin-bottom:12px}
 .ftr ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:15px}
 .ftr a:hover{color:#fff}
+.ftr .legal{border-top:1px solid rgba(255,255,255,.12);padding-block:18px;font-size:var(--sh-fs-small);display:flex;flex-wrap:wrap;gap:6px 20px;align-items:baseline;color:rgba(244,241,234,.8)}
+.ftr .legal b{color:#fff;font-weight:600;font-size:15px}
+.ftr .legal a{text-decoration:underline;text-underline-offset:3px}
+.side .legal-box dl{margin:12px 0 0;display:grid}
+.side .legal-box .row{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--sh-line);font-size:15px}
+.side .legal-box .row:first-child{border-top:0}
+.side .legal-box dt{color:var(--sh-muted);font-weight:500}
+.side .legal-box dd{margin:0;font-weight:500}
+.side .legal-box a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .ftr .bottom{border-top:1px solid rgba(255,255,255,.12);padding-block:20px;font-size:var(--sh-fs-small);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 .mbar{display:none}
