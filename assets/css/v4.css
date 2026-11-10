@@ -1,0 +1,120 @@
+/* v4 (2026-10-28): three sections, each with its own color.
+   ===== SECTION COLORS: the only place to change them (studio: replace the hexes here) =====
+   --x       : main/accent color (big shapes, bars, dots; not for small text on white)
+   --x-ink   : darker variant for small text, buttons and hero backgrounds (WCAG AA >= 4.5:1 on white and on #F4F1EA). Source: /workspace/bots/sheen/identity/06-القيم-الرقمية/tokens.json
+   --x-soft  : light tint for backgrounds/placeholders */
+:root{
+  --voice:#143F86;  --voice-ink:#143F86;  --voice-soft:#E3E9F3;   /* بحر 17 · أزرق شين (tokens primary)     ink 10.07:1 on white, 8.26:1 on soft */
+  --gift:#C9572F;   --gift-ink:#AD4824;   --gift-soft:#F8E8E1;    /* الهدايا · طين (secondary) + clay-ink (ui)  ink 5.63:1 on white, 4.73:1 on soft; #C9572F only for large shapes */
+  --design:#2E4B38; --design-ink:#2E4B38; --design-soft:#E2E8E3;  /* بديع للتصميم · سدر (tertiary)         ink 9.63:1 on white, 7.75:1 on soft */
+  /* identity neutrals: cream #F4F1EA (page bg), navy #0E2246 (dark text/bands) — already used by site.css */
+}
+.s-gift{--sc:var(--gift);--sc-ink:var(--gift-ink);--sc-soft:var(--gift-soft);--b-main:var(--gift-ink);--b-accent:var(--gift);--b-on:#fff}
+.s-voice{--sc:var(--voice);--sc-ink:var(--voice-ink);--sc-soft:var(--voice-soft);--b-main:var(--voice-ink);--b-accent:var(--voice);--b-on:#fff}
+.s-design{--sc:var(--design);--sc-ink:var(--design-ink);--sc-soft:var(--design-soft);--b-main:var(--design-ink);--b-accent:var(--design);--b-on:#fff}
+.dm{display:inline-block;width:14px;height:14px;border-radius:3px;background:var(--sc,var(--blue));transform:rotate(45deg);flex:none}
+.sec-tag{display:inline-flex;align-items:center;gap:12px;font-size:15px;font-weight:600;color:var(--sc-ink);margin-bottom:10px}
+.hero.v3{padding-bottom:clamp(32px,5vw,56px)}
+.dots{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);margin-top:36px;max-width:900px}
+.dotcard{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:26px 24px;border-radius:20px;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--navy);border-top:6px solid var(--sc);transition:transform .2s,box-shadow .2s;min-width:0}
+.dotcard:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(14,34,70,.12)}
+.dotcard .dm{width:30px;height:30px;border-radius:5px;margin:4px 6px 14px}
+.dotcard .lbl{font-size:14px;color:var(--sc-ink);font-weight:600}
+.dotcard b{font-size:clamp(22px,2.6vw,30px);line-height:1.2}
+@media(max-width:620px){.dots{grid-template-columns:1fr}.dotcard{flex-direction:row;align-items:center;gap:14px;padding:18px 20px;border-top:0;border-inline-start:6px solid var(--sc)}.dotcard .dm{margin:0 4px;width:22px;height:22px}.dotcard b{font-size:22px;margin-inline-start:auto}}
+.blk{padding-top:clamp(40px,6vw,72px)}
+.blk .wrap>.row{background:#fff;border-radius:28px;border:1px solid var(--line);overflow:hidden;border-inline-start:8px solid var(--sc)}
+.row{display:grid;gap:28px;grid-template-columns:1fr;align-items:center}
+@media(min-width:880px){.row{grid-template-columns:1fr 1fr}.row.rev .txt{order:2}}
+.blk .txt{padding:clamp(26px,4vw,48px)}
+.blk h2{color:var(--sc-ink);font-size:clamp(34px,5vw,52px);margin-bottom:.2em}
+.big{font-size:clamp(19px,2.2vw,23px);font-weight:600;color:var(--navy);margin-bottom:.6em}
+.blk .list li:before,.s-gift .list li:before,.s-voice .list li:before,.s-design .list li:before{background:var(--sc)}
+.pic{display:block;width:100%;height:100%}.pic img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.row>.pic img{border-radius:0}.sec:not(.blk) .row>.pic img{border-radius:22px}
+.home-band{background:var(--navy)}
+/* section page hero */
+.shero{background:var(--sc-ink);color:#fff;padding:clamp(48px,9vw,104px) 0}
+.shero .crumbs{font-size:14px;opacity:.8;margin-bottom:18px}.shero .crumbs a{text-decoration:none;color:#fff}
+.shero .sec-tag{color:#fff}.shero .sec-tag .dm{background:#fff}
+.shero h1{font-size:clamp(44px,8vw,80px);margin-bottom:.1em}
+.shero .big{color:#fff}.shero .lead{color:#fff;opacity:.9;max-width:46ch}
+.shero .btn-main{background:#fff;color:var(--sc-ink)}.shero .btn-ghost{color:#fff}
+.t-gift,.t-voice,.t-design{--b-bg:#F4F1EA;--b-ink:#0E2246}
+.pgrid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.pcard{background:#fff;border-radius:22px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;text-decoration:none;color:var(--navy)}
+.pcard .pic{height:auto}
+.pcard .t{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pcard h3{margin:0;font-size:24px}.pcard p{margin:0}.pcard .btn{align-self:flex-start;margin-top:6px}
+.pcard .list{margin:4px 0}
+a.pcard{transition:transform .2s,box-shadow .2s}a.pcard:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(14,34,70,.12)}
+.vb{background:var(--c-bg,#fff);color:var(--c-ink,var(--navy))}
+.vb .lg{height:56px;display:flex;align-items:center}.vb .lg img{max-height:56px;width:auto;max-width:220px}
+.vb .go{font-weight:600;color:var(--c-acc);margin-top:auto}
+.txt-logo{font-size:28px;font-weight:700;color:var(--sc-ink,#0E2246)}
+.vb.c-bahr .lg img{max-height:48px}
+.ftr .secs a{display:inline-flex;align-items:center;gap:10px}.ftr .secs .dm{width:10px;height:10px}
+.steps .card:before{background:var(--b-main)}
+.blk{padding-bottom:0}.blk+.sec:not(.blk){padding-top:clamp(40px,6vw,72px)}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.txt-logo{margin:0}
+.band .kicker{color:#fff;opacity:.85}.shero .soon{background:rgba(255,255,255,.2)}
+
+/* v4 additions */
+.sec-logo{display:block;height:clamp(64px,8vw,92px);width:auto;max-width:100%;margin:4px 0 14px}
+.blk h2 .sec-logo{margin:0}
+.logo-slot{display:inline-flex;background:#fff;border-radius:18px;padding:10px;margin-bottom:22px}
+.logo-slot .sec-logo{margin:0;height:clamp(70px,10vw,104px)}
+.shero .sec-tag{margin-top:6px}
+.ph-pic{aspect-ratio:4/3;display:grid;place-content:center;justify-items:center;gap:14px;background:var(--sc-soft,#F4F1EA);color:var(--sc-ink,#0E2246);font-weight:600;font-size:17px}
+.ph-pic .dm{width:40px;height:40px;border-radius:7px;background:var(--sc)}
+.s-gift .btn-main,.s-voice .btn-main,.s-design .btn-main{background:var(--sc-ink);color:#fff}
+.shero .btn-main{background:#fff;color:var(--sc-ink)}
+.band.s-voice,.band.s-gift,.band.s-design{background:var(--sc-ink)}
+.band.s-voice .btn-main,.band.s-gift .btn-main,.band.s-design .btn-main{background:#fff;color:var(--sc-ink)}
+.logo-slot{display:flex;width:fit-content}
+.blk{padding-bottom:18px}
+
+/* section page themes: every default accent on a section page uses that section's color */
+.t-voice{--b-main:var(--voice-ink);--b-accent:var(--voice);--b-on:#fff}
+.t-gift{--b-main:var(--gift-ink);--b-accent:var(--gift);--b-on:#fff}
+.t-design{--b-main:var(--design-ink);--b-accent:var(--design);--b-on:#fff}
+
+/* final section logos (2026-10-29) */
+.blk h2 .sec-logo{height:clamp(64px,8vw,92px);width:auto;max-width:100%;margin:0 0 6px}
+.shero .logo-h1{margin:0 0 10px;line-height:0}
+.shero .hero-logo{display:block;height:clamp(80px,11vw,128px);width:auto;max-width:100%}
+.dotcard .sec-symbol{width:56px;height:56px;margin:0 -6px 4px}
+@media(max-width:620px){
+  .dotcard .sec-symbol{width:46px;height:46px;margin:0 -6px}
+  .blk h2 .sec-logo{height:auto;width:100%;max-width:none}
+  .blk h2 .logo-bahr17{width:calc(100% + 40px);margin-inline:-20px}   /* keep bahr17 (no compact version) >= 64px tall on 390px screens; safe area is inside the viewBox */
+  .blk h2 .logo-badee{width:auto;height:80px;max-width:100%}
+  .blk h2 .logo-hadaya{width:auto;height:80px;max-width:100%}
+}
+@media(max-width:620px){.shero .hero-logo.logo-bahr17{height:auto;width:100%}}
+
+/* Gifts: no sub-brand logo, only the clay diamond mark */
+.gift-h2,.gift-h1{display:flex;align-items:center;gap:14px;margin:0}
+.gift-h2 .gift-mark{width:clamp(56px,7vw,80px);height:auto}
+.gift-h2 span{font-size:clamp(34px,4.4vw,52px);font-weight:700;color:var(--gift-ink);line-height:1.1}
+.gift-h1 .hero-mark{width:clamp(64px,9vw,104px);height:auto;filter:brightness(0) invert(96%) sepia(6%) saturate(300%)}
+.gift-h1 span{font-size:clamp(40px,6vw,72px);font-weight:700;color:#F4F1EA;line-height:1.1}
+.ftr .secs small{opacity:.75;font-size:.85em;margin-inline-start:4px}
+.ftr .sub-prods{margin:10px 0 0;font-size:14px;opacity:.85}.ftr .sub-prods a{color:inherit}
+
+/* شارة وبشارة: هوية لونية فقط (v1.2: #542D46 #FFF8EF #F09580 #BDCEC1 #E7C67C) */
+.sb{--sb-plum:#542D46;--sb-cream:#FFF8EF;--sb-coral:#F09580;--sb-sage:#BDCEC1;--sb-gold:#E7C67C;background:var(--sb-cream);color:var(--sb-plum)}
+.sb .shero{background:var(--sb-plum);color:var(--sb-cream)}
+.sb .shero h1,.sb .shero .big,.sb .shero .lead,.sb .shero .crumbs,.sb .shero .crumbs a,.sb .shero .sec-tag{color:var(--sb-cream)}
+.sb .shero .big{color:var(--sb-gold)}
+.sb .btn-main{background:var(--sb-coral);color:var(--sb-plum);border-color:var(--sb-coral)}
+.sb .btn-ghost{color:inherit;border-color:currentColor;background:transparent}
+.sb h2,.sb h3,.sb .sec-tag{color:var(--sb-plum)}
+.sb .sec-tag .dm{background:var(--sb-coral)}
+.sb .card{background:#fff;border-color:var(--sb-sage)}
+.sb .sb-c1{border-top:4px solid var(--sb-coral)}.sb .sb-c2{border-top:4px solid var(--sb-gold)}.sb .sb-c3{border-top:4px solid var(--sb-sage)}
+.sb .amt{color:var(--sb-plum)}
+.sb .sb-about{background:var(--sb-sage)}
+.sb .sb-note{display:inline-block;background:var(--sb-gold);color:var(--sb-plum);padding:6px 14px;border-radius:999px;font-weight:600}
+.sb .sb-band{background:var(--sb-plum);color:var(--sb-cream)}
+.sb .sb-band h2,.sb .sb-band p{color:var(--sb-cream)}
